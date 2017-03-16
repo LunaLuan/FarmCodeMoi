@@ -10,6 +10,7 @@
 
 #include "EmotionAnimal.h"
 #include "IntelligenceAnimal.h"
+#include "Cat.h"
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -26,7 +27,7 @@ public:
 	virtual void die();
 	virtual int reproduce();
 	virtual int getFoodUnit();
-	virtual void listen();
+	virtual void listen(Animal *a);
 
 	virtual void onHourChange(int h);
 	virtual void onDayChange(int d);

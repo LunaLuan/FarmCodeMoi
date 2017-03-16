@@ -55,7 +55,14 @@ Dog::~Dog() {
 	// TODO Auto-generated destructor stub
 }
 
-void Dog::listen() {
+void Dog::listen(Animal *a) {
+	if (dynamic_cast<Cat*>(a)) {
+		soundCount++;
+	}
+	if (soundCount == 5) {
+		cout << "Cho dang buc minh vi cac con vat khac...\n";
+		happyIndex--;
+	}
 }
 
 void Dog::onHourChange(int h) {
@@ -64,7 +71,8 @@ void Dog::onHourChange(int h) {
 	}
 }
 void Dog::onDayChange(int d) {
-
+	age++;
+	soundCount = 0;
 }
 
 void Dog::printSound() {

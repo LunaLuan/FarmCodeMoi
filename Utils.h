@@ -14,7 +14,10 @@ using namespace std;
 class Utils {
 public:
 	Utils();
-
+	/*
+	 * Thu xem con tro p co phai kieu Title khong
+	 * if(dynamic_cast<Tile*>(p))
+	 */
 
 	virtual ~Utils();
 };

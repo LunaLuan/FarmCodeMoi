@@ -48,7 +48,18 @@ Cat::~Cat() {
 	// TODO Auto-generated destructor stub
 }
 
-void Cat::listen() {
+void Cat::listen(Animal *a) {
+	if(dynamic_cast<Dog*>(a)) {
+		soundCount++;
+	}
+	if(dynamic_cast<Chicken*>(a)) {
+		soundCount++;
+	}
+
+	if(soundCount == 15) {
+		cout << "Meo dang buc minh vi cac con vat khac...";
+		happyIndex--;
+	}
 }
 
 void Cat::onHourChange(int h) {
@@ -58,10 +69,12 @@ void Cat::onHourChange(int h) {
 }
 
 void Cat::onDayChange(int d) {
+	age ++;
+	soundCount++;
 }
 
 void Cat::printSound() {
-	cout << "Meow..." << endl;
+	cout << "...Meow" << endl;
 }
 
 int Cat::getFoodUnit() {

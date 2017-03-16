@@ -10,6 +10,7 @@
 Animal::Animal() {
 	TimeManager::getInstance()->addTimeObsever(this);
 	age = 0;
+	soundCount = 0;
 }
 
 string Animal::getName() {
@@ -74,7 +75,7 @@ string Animal::getType() {
 void Animal::notifyListener() {
 	int size = listeners.size();
 	for (int i = 0; i < size; i++) {
-		listeners[i]->listen();
+		listeners[i]->listen(this);
 	}
 }
 

@@ -24,7 +24,7 @@ public:
 	virtual void goBack();
 	virtual void die();
 	virtual int reproduce();
-	virtual void listen();
+	virtual void listen(Animal *a);
 	virtual int getFoodUnit();
 
 	virtual void onHourChange(int h);

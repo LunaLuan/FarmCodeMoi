@@ -9,6 +9,8 @@
 #define CAT_H_
 
 #include "EmotionAnimal.h"
+#include "Dog.h"
+#include "Chicken.h"
 
 #include<iostream>
 using namespace std;
@@ -23,7 +25,7 @@ public:
 	virtual void die();
 	virtual int reproduce();
 	virtual int getFoodUnit();
-	virtual void listen();
+	virtual void listen(Animal *a);
 	virtual void onHourChange(int h);
 	virtual void onDayChange(int d);
 

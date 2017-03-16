@@ -1,0 +1,138 @@
+\hypertarget{class_animal}{}\section{Animal Class Reference}
+\label{class_animal}\index{Animal@{Animal}}
+
+
+Inheritance diagram for Animal\+:
+% FIG 0
+
+
+Collaboration diagram for Animal\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_animal_acd010252e10da84a05efd43d9bf69279}\label{class_animal_acd010252e10da84a05efd43d9bf69279}} 
+string {\bfseries get\+Name} ()
+\item 
+\mbox{\Hypertarget{class_animal_aa26d5b8f6912f03da2cc64ff0b888972}\label{class_animal_aa26d5b8f6912f03da2cc64ff0b888972}} 
+void {\bfseries set\+Name} (string n)
+\item 
+\mbox{\Hypertarget{class_animal_abd2ffd89b5ad2126ac2af7d31ca6d446}\label{class_animal_abd2ffd89b5ad2126ac2af7d31ca6d446}} 
+string {\bfseries get\+Type} ()
+\item 
+\mbox{\Hypertarget{class_animal_a4b3acac24e7995363c4f130887c3b3ab}\label{class_animal_a4b3acac24e7995363c4f130887c3b3ab}} 
+int {\bfseries get\+Age} ()
+\item 
+\mbox{\Hypertarget{class_animal_a91a574efed96581f15ce99c62dba3778}\label{class_animal_a91a574efed96581f15ce99c62dba3778}} 
+void {\bfseries set\+Age} (int a)
+\item 
+\mbox{\Hypertarget{class_animal_a722be3bcb2f66289160b6932111caf32}\label{class_animal_a722be3bcb2f66289160b6932111caf32}} 
+float {\bfseries get\+Weight} ()
+\item 
+\mbox{\Hypertarget{class_animal_a79b8aaf14511a9624d35fb9e83959270}\label{class_animal_a79b8aaf14511a9624d35fb9e83959270}} 
+void {\bfseries set\+Weight} (float w)
+\item 
+\mbox{\Hypertarget{class_animal_ad5cee2c9d8bdfc27e3eea866f7ed6eea}\label{class_animal_ad5cee2c9d8bdfc27e3eea866f7ed6eea}} 
+int {\bfseries get\+Price\+Sell} ()
+\item 
+\mbox{\Hypertarget{class_animal_aee99154e40d8d538308f803a24bd8314}\label{class_animal_aee99154e40d8d538308f803a24bd8314}} 
+virtual void {\bfseries set\+Price\+Sell} (int p)
+\item 
+\mbox{\Hypertarget{class_animal_a0d329a7e10c3ab3af2f4e9048326c1e2}\label{class_animal_a0d329a7e10c3ab3af2f4e9048326c1e2}} 
+int {\bfseries get\+Price\+Buy} ()
+\item 
+\mbox{\Hypertarget{class_animal_a6ad26fc54e55d2a577bdb0673f9c6c7e}\label{class_animal_a6ad26fc54e55d2a577bdb0673f9c6c7e}} 
+virtual void {\bfseries set\+Price\+Buy} (int p)
+\item 
+\mbox{\Hypertarget{class_animal_a39c25838a7b4dd87e67838cc6e78fae6}\label{class_animal_a39c25838a7b4dd87e67838cc6e78fae6}} 
+void {\bfseries sound} ()
+\item 
+\mbox{\Hypertarget{class_animal_ad018a3798fe7ddf30da60d8f2557701b}\label{class_animal_ad018a3798fe7ddf30da60d8f2557701b}} 
+virtual void {\bfseries eat} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_afcacae4af51b4f3fc88a1354f21dc7a7}\label{class_animal_afcacae4af51b4f3fc88a1354f21dc7a7}} 
+virtual void {\bfseries go\+Out} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_af74e43a1338419fe4582e61e2b4d8d34}\label{class_animal_af74e43a1338419fe4582e61e2b4d8d34}} 
+virtual void {\bfseries go\+Back} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_a6cc3df8555c60352f9c55ca174a9f9df}\label{class_animal_a6cc3df8555c60352f9c55ca174a9f9df}} 
+virtual void {\bfseries die} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_aaa82a4b9ceb712c473d84b87c920043f}\label{class_animal_aaa82a4b9ceb712c473d84b87c920043f}} 
+virtual int {\bfseries reproduce} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_a2649b5bbe14978ed2ee966c1518c5fac}\label{class_animal_a2649b5bbe14978ed2ee966c1518c5fac}} 
+virtual int {\bfseries get\+Food\+Unit} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_a126acfdd961c2d49373159b256d71b23}\label{class_animal_a126acfdd961c2d49373159b256d71b23}} 
+virtual void {\bfseries listen} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_ae3e210967f50cee3ef1023d985976867}\label{class_animal_ae3e210967f50cee3ef1023d985976867}} 
+void {\bfseries add\+Listener} (\hyperlink{class_animal}{Animal} $\ast$a)
+\item 
+\mbox{\Hypertarget{class_animal_a83e0c4009f62540aca99f0b5ceeb7fdd}\label{class_animal_a83e0c4009f62540aca99f0b5ceeb7fdd}} 
+void {\bfseries remove\+Listener} (\hyperlink{class_animal}{Animal} $\ast$a)
+\item 
+\mbox{\Hypertarget{class_animal_aec682deda01c7165197f7c7eba9ab88c}\label{class_animal_aec682deda01c7165197f7c7eba9ab88c}} 
+virtual void {\bfseries on\+Hour\+Change} (int h)=0
+\item 
+\mbox{\Hypertarget{class_animal_af4b1639570a362dda44948ed483bf94c}\label{class_animal_af4b1639570a362dda44948ed483bf94c}} 
+virtual void {\bfseries on\+Day\+Change} (int d)=0
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{class_animal_a93ad63b6239f8f18d167034b7948f35a}\label{class_animal_a93ad63b6239f8f18d167034b7948f35a}} 
+virtual void {\bfseries print\+Sound} ()=0
+\item 
+\mbox{\Hypertarget{class_animal_aa1ebce4b14be5e3d38c831b51a7ac307}\label{class_animal_aa1ebce4b14be5e3d38c831b51a7ac307}} 
+void {\bfseries notify\+Listener} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_animal_a9cf3bfd9070daec7b3bbc87cbd958f35}{name}
+\item 
+\mbox{\Hypertarget{class_animal_a8b120b31083a0561ab9969d5aeb03195}\label{class_animal_a8b120b31083a0561ab9969d5aeb03195}} 
+string {\bfseries type}
+\item 
+\mbox{\Hypertarget{class_animal_a31e4a23bef9596927496de4eb6b9c721}\label{class_animal_a31e4a23bef9596927496de4eb6b9c721}} 
+int {\bfseries age}
+\item 
+\mbox{\Hypertarget{class_animal_a055c4df7dacb89eb4c2ca9bbee11ff24}\label{class_animal_a055c4df7dacb89eb4c2ca9bbee11ff24}} 
+float {\bfseries weight}
+\item 
+\mbox{\Hypertarget{class_animal_ae18bdb6ca2de33354df5d877f159fb5b}\label{class_animal_ae18bdb6ca2de33354df5d877f159fb5b}} 
+int {\bfseries price\+Buy}
+\item 
+\mbox{\Hypertarget{class_animal_a5386cd93699ab24f8faddc3a2bfeea99}\label{class_animal_a5386cd93699ab24f8faddc3a2bfeea99}} 
+int {\bfseries price\+Sell}
+\item 
+\mbox{\Hypertarget{class_animal_a386cf61e5b26f85531a56cdefbae3784}\label{class_animal_a386cf61e5b26f85531a56cdefbae3784}} 
+int {\bfseries sound\+Count}
+\item 
+\mbox{\Hypertarget{class_animal_aab993ffc4b1e0a19c8c8f99deee70002}\label{class_animal_aab993ffc4b1e0a19c8c8f99deee70002}} 
+int {\bfseries eat\+Days}
+\item 
+\mbox{\Hypertarget{class_animal_a6782d3e905883a5aff6ce78f3550b415}\label{class_animal_a6782d3e905883a5aff6ce78f3550b415}} 
+int {\bfseries food\+Unit}
+\item 
+\mbox{\Hypertarget{class_animal_a15e2ae06f4ce89a2c1a20fa3f919586c}\label{class_animal_a15e2ae06f4ce89a2c1a20fa3f919586c}} 
+vector$<$ \hyperlink{class_animal}{Animal} $\ast$ $>$ {\bfseries listeners}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_animal_a9cf3bfd9070daec7b3bbc87cbd958f35}\label{class_animal_a9cf3bfd9070daec7b3bbc87cbd958f35}} 
+\index{Animal@{Animal}!name@{name}}
+\index{name@{name}!Animal@{Animal}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily string Animal\+::name\hspace{0.3cm}{\ttfamily [protected]}}
+
+ten con vat... 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Animal.\+h\item 
+Animal.\+cpp\end{DoxyCompactItemize}

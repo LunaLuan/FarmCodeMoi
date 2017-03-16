@@ -45,7 +45,7 @@ public:
 
 	virtual int getFoodUnit() = 0;
 
-	virtual void listen() = 0;
+	virtual void listen(Animal *a) = 0;
 	void addListener(Animal *a);
 	void removeListener(Animal *a);
 

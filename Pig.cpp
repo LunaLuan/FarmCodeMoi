@@ -45,7 +45,7 @@ Pig::~Pig() {
 void Pig::goBack() {
 }
 
-void Pig::listen() {
+void Pig::listen(Animal *a) {
 
 }
 
@@ -61,7 +61,7 @@ void Pig::onDayChange(int d) {
 }
 
 void Pig::printSound() {
-	cout << "...Oink!" << endl;
+	cout << "...Oink" << endl;
 }
 
 int Pig::getFoodUnit() {

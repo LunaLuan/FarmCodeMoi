@@ -24,12 +24,11 @@ void AnimalManager::buyAnimal(string type, string name) {
 	if (resourceListener != NULL) {
 		bool buySuccess = resourceListener->onBuyAnimal(animal->getPriceBuy());
 		if (buySuccess) {
-			animals.push_back(animal);
+			addNewAnimal(animal);
 		} else {
 			cout << "Ban khong du tien de mua..." << endl;
 		}
 	}
-
 }
 
 void AnimalManager::sellAnimal(string type, string name) {
@@ -169,8 +168,7 @@ void AnimalManager::feedAnimalByName(string name) {
 				if ((*i)->getFoodUnit() != 0) {
 					resourceListener->onFeedAnimal((*i)->getFoodUnit());
 					(*i)->eat();
-				}
-				else {
+				} else {
 					cout << name << " chua duoc an..." << endl;
 				}
 
@@ -182,3 +180,14 @@ void AnimalManager::feedAnimalByName(string name) {
 		cout << "Khong du thuc an cho " << name << " !\n";
 	}
 }
+
+void AnimalManager::addNewAnimal(Animal* animal) {
+	list<Animal*>::iterator i = animals.begin();
+	while (i != animals.end()) {
+		(*i)->addListener(animal);
+		animal->addListener((*i));
+		i++;
+	}
+	animals.push_back(animal);
+}
+

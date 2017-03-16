@@ -37,6 +37,9 @@ public:
 protected:
 	ResuorceManager *resourceListener;
 	list<Animal *> animals;
+
+	void addNewAnimal(Animal *animal);
+
 };
 
 #endif /* ANIMALMANAGER_H_ */

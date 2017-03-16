@@ -10,7 +10,7 @@
 ResuorceManager::ResuorceManager() {
 
 	food = 50;
-	money = 50;
+	money = 100;
 
 }
 

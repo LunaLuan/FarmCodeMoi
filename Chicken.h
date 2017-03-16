@@ -9,6 +9,10 @@
 #define CHICKEN_H_
 
 #include "EmotionAnimal.h"
+#include "Cat.h"
+#include "Dog.h"
+#include "Pig.h"
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -24,7 +28,7 @@ public:
 	virtual int reproduce();
 	virtual void onHourChange(int h);
 	virtual void onDayChange(int d);
-	virtual void listen();
+	virtual void listen(Animal *a);
 	virtual int getFoodUnit();
 
 	virtual ~Chicken();
