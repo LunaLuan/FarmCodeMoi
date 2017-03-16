@@ -8,12 +8,21 @@
 #include "Chicken.h"
 
 Chicken::Chicken() {
+	type = "Chicken";
 	setPriceSell(2);
 	setPriceBuy(4);
 
 }
 
 void Chicken::eat() {
+	for (int i = 0; i < getFoodUnit(); i++) {
+		sound();
+	}
+	eatDays++;
+	if (eatDays == 2) {
+		weight += 0.2;
+		eatDays = 0;
+	}
 
 }
 
@@ -38,13 +47,27 @@ int Chicken::reproduce() {
 
 }
 
+void Chicken::onHourChange(int h) {
+	//cout << "Hour:  " << h;
+	if (h == 6) {
+		sound();
+	}
+}
+
+void Chicken::onDayChange(int d) {
+}
+
 Chicken::~Chicken() {
 	// TODO Auto-generated destructor stub
 }
 
 void Chicken::printSound() {
-	cout << "Bawk...";
+	cout << "Bawk..." << endl;
 }
 
 void Chicken::listen() {
+}
+
+int Chicken::getFoodUnit() {
+	return 1;
 }

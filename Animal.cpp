@@ -8,7 +8,8 @@
 #include "Animal.h"
 
 Animal::Animal() {
-
+	TimeManager::getInstance()->addTimeObsever(this);
+	age = 0;
 }
 
 string Animal::getName() {
@@ -64,6 +65,11 @@ int Animal::getPriceBuy() {
 void Animal::setPriceBuy(int p) {
 	priceBuy = p;
 }
+
+string Animal::getType() {
+	return type;
+}
+
 
 void Animal::notifyListener() {
 	int size = listeners.size();

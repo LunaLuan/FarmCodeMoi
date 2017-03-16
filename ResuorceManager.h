@@ -15,10 +15,13 @@ class ResuorceManager {
 public:
 	ResuorceManager();
 
-	void buyFood(int m);
-	void onBuyAnimal(int price);
-	void onSellAnimal(int price);
-	void onFeedAnimal(int foodCount);
+	bool buyFood(int m);
+	bool onBuyAnimal(int price);
+	bool onSellAnimal(int price);
+	bool onFeedAnimal(int foodCount);
+	bool checkFood(int f);
+
+	friend ostream& operator<<(ostream& os, ResuorceManager &r);
 
 	virtual ~ResuorceManager();
 

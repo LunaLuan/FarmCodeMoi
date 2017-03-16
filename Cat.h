@@ -22,8 +22,10 @@ public:
 	virtual void goBack();
 	virtual void die();
 	virtual int reproduce();
-
+	virtual int getFoodUnit();
 	virtual void listen();
+	virtual void onHourChange(int h);
+	virtual void onDayChange(int d);
 
 	virtual ~Cat();
 

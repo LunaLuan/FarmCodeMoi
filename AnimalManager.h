@@ -12,21 +12,31 @@
 #include "ResuorceManager.h"
 #include "AnimalFactory.h"
 #include <iostream>
-#include <vector>
+#include <list>
+#include <typeinfo>
 
 using namespace std;
 
 class AnimalManager {
 public:
 	AnimalManager();
+
+
 	void buyAnimal(string type, string name);
 	void sellAnimal(string type, string name);
 	void sellAnimal(string type);
+
+	void feedAnimals();
+	void feedAnimalByType(string type);
+	void feedAnimalByName(string name);
+
 	void setResourceListener(ResuorceManager *resource);
+
+	friend ostream& operator<<(ostream &os, AnimalManager &am);
 	virtual ~AnimalManager();
 protected:
 	ResuorceManager *resourceListener;
-	// vector<class Animal *> animals;
+	list<Animal *> animals;
 };
 
 #endif /* ANIMALMANAGER_H_ */

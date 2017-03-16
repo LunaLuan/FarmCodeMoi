@@ -25,6 +25,10 @@ public:
 	virtual void die();
 	virtual int reproduce();
 	virtual void listen();
+	virtual int getFoodUnit();
+
+	virtual void onHourChange(int h);
+	virtual void onDayChange(int d);
 
 	virtual ~Pig();
 

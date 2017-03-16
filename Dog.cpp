@@ -8,6 +8,7 @@
 #include "Dog.h"
 
 Dog::Dog() {
+	type = "Dog";
 	setPriceBuy(8);
 	setPriceSell(5);
 }
@@ -22,7 +23,14 @@ void Dog::train() {
 }
 
 void Dog::eat() {
-
+	for (int i = 0; i < getFoodUnit(); i++) {
+		sound();
+	}
+	eatDays++;
+	if (eatDays == 2) {
+		weight++;
+		eatDays = 0;
+	}
 }
 
 void Dog::goOut() {
@@ -50,7 +58,22 @@ Dog::~Dog() {
 void Dog::listen() {
 }
 
+void Dog::onHourChange(int h) {
+	if (h == 20) {
+		sound();
+	}
+}
+void Dog::onDayChange(int d) {
+
+}
+
 void Dog::printSound() {
 	cout << "...Woof" << endl;
 }
 
+int Dog::getFoodUnit() {
+	if (age < 3)
+		return 0;
+	else
+		return 3;
+}

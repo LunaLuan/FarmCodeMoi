@@ -12,7 +12,15 @@ IntelligenceAnimal::IntelligenceAnimal() {
 
 }
 
-IntelligenceAnimal::~IntelligenceAnimal() {
+ void IntelligenceAnimal::onHourChange(int h)
+ {
+ }
+
+ void IntelligenceAnimal::onDayChange(int d)
+ {
+ }
+
+ IntelligenceAnimal::~IntelligenceAnimal() {
 	// TODO Auto-generated destructor stub
 }
 

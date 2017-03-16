@@ -24,6 +24,10 @@ public:
 	virtual int reproduce() = 0;
 
 	virtual void listen() = 0;
+	virtual void onHourChange(int h) = 0;
+	virtual void onDayChange(int d) = 0;
+
+	virtual int getFoodUnit() = 0;
 
 	virtual ~IntelligenceAnimal();
 

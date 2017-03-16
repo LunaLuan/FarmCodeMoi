@@ -8,6 +8,7 @@
 #include "Pig.h"
 
 Pig::Pig() {
+	type = "Pig";
 	setPriceBuy(6);
 }
 
@@ -16,7 +17,10 @@ void Pig::setPriceSell() {
 }
 
 void Pig::eat() {
-
+	for (int i = 0; i < getFoodUnit() ; i++) {
+		sound();
+	}
+	weight++;
 }
 
 void Pig::goOut() {
@@ -45,7 +49,24 @@ void Pig::listen() {
 
 }
 
+void Pig::onHourChange(int h) {
+	if (h == 12) {
+		sound();
+	}
+}
+
+void Pig::onDayChange(int d) {
+	age++;
+
+}
+
 void Pig::printSound() {
 	cout << "...Oink!" << endl;
 }
 
+int Pig::getFoodUnit() {
+	if (age < 2)
+		return 0;
+	else
+		return 7;
+}
