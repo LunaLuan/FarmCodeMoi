@@ -1,5 +1,5 @@
 #include<iostream>
-
+#include <conio.h>
 #include "MacDonald.h"
 #include "Animal.h"
 #include "TimeManager.h"
@@ -22,9 +22,25 @@ int main() {
 
 	am.buyAnimal("Pig", "Pig1");
 
+	while (true) {
+		if(_kbhit()) {
+			string command;
+			char c;
+			c= getch();
+			cout << c;
 
-	while(true) {
+			command += c;
+			if(c == '\\')
+				cout << ">>Day la command";
+
+			if(command == "d") {
+				TimeManager::getInstance()->jumpToNextDay();
+			}
+
+		}
 		TimeManager::getInstance()->covertTime();
+
+
 	}
 
 	return 0;

@@ -1,0 +1,70 @@
+# Project: Project2
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Animal.o AnimalFactory.o AnimalManager.o Cat.o Chicken.o Dog.o EmotionAnimal.o IntelligenceAnimal.o MacDonald.o main.o Pig.o ResuorceManager.o TimeManager.o TimeObserver.o Utils.o
+LINKOBJ  = Animal.o AnimalFactory.o AnimalManager.o Cat.o Chicken.o Dog.o EmotionAnimal.o IntelligenceAnimal.o MacDonald.o main.o Pig.o ResuorceManager.o TimeManager.o TimeObserver.o Utils.o
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = Project2.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS   = $(INCS) 
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Animal.o: Animal.cpp
+	$(CPP) -c Animal.cpp -o Animal.o $(CXXFLAGS)
+
+AnimalFactory.o: AnimalFactory.cpp
+	$(CPP) -c AnimalFactory.cpp -o AnimalFactory.o $(CXXFLAGS)
+
+AnimalManager.o: AnimalManager.cpp
+	$(CPP) -c AnimalManager.cpp -o AnimalManager.o $(CXXFLAGS)
+
+Cat.o: Cat.cpp
+	$(CPP) -c Cat.cpp -o Cat.o $(CXXFLAGS)
+
+Chicken.o: Chicken.cpp
+	$(CPP) -c Chicken.cpp -o Chicken.o $(CXXFLAGS)
+
+Dog.o: Dog.cpp
+	$(CPP) -c Dog.cpp -o Dog.o $(CXXFLAGS)
+
+EmotionAnimal.o: EmotionAnimal.cpp
+	$(CPP) -c EmotionAnimal.cpp -o EmotionAnimal.o $(CXXFLAGS)
+
+IntelligenceAnimal.o: IntelligenceAnimal.cpp
+	$(CPP) -c IntelligenceAnimal.cpp -o IntelligenceAnimal.o $(CXXFLAGS)
+
+MacDonald.o: MacDonald.cpp
+	$(CPP) -c MacDonald.cpp -o MacDonald.o $(CXXFLAGS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Pig.o: Pig.cpp
+	$(CPP) -c Pig.cpp -o Pig.o $(CXXFLAGS)
+
+ResuorceManager.o: ResuorceManager.cpp
+	$(CPP) -c ResuorceManager.cpp -o ResuorceManager.o $(CXXFLAGS)
+
+TimeManager.o: TimeManager.cpp
+	$(CPP) -c TimeManager.cpp -o TimeManager.o $(CXXFLAGS)
+
+TimeObserver.o: TimeObserver.cpp
+	$(CPP) -c TimeObserver.cpp -o TimeObserver.o $(CXXFLAGS)
+
+Utils.o: Utils.cpp
+	$(CPP) -c Utils.cpp -o Utils.o $(CXXFLAGS)

@@ -23,7 +23,7 @@ public:
 	virtual void goOut();
 	virtual void goBack();
 	virtual void die();
-	virtual int reproduce();
+	virtual list<Animal*> reproduce();
 	virtual int getFoodUnit();
 	virtual void listen(Animal *a);
 	virtual void onHourChange(int h);

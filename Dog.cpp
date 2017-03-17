@@ -47,8 +47,19 @@ void Dog::die() {
 
 }
 
-int Dog::reproduce() {
-	return 1;
+list<Animal*> Dog::reproduce() {
+	list<Animal*> children;
+	if (age == 22 && weight == 7.0 && happyIndex == 10 && intelligenceIndex == 10) {
+		int r = rand() % 3;
+		cout << "Dog moi de con...";
+		for (int i = 0; i < r; i++) {
+			Dog *a = new Dog();
+			a->setName("ChildOf" + name);
+			a->sound();
+			children.push_back(a);
+		}
+	}
+	return children;
 }
 
 Dog::~Dog() {
@@ -71,6 +82,7 @@ void Dog::onHourChange(int h) {
 	}
 }
 void Dog::onDayChange(int d) {
+	removeDieListener();
 	age++;
 	soundCount = 0;
 }

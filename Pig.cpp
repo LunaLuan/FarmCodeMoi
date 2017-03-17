@@ -17,7 +17,7 @@ void Pig::setPriceSell() {
 }
 
 void Pig::eat() {
-	for (int i = 0; i < getFoodUnit() ; i++) {
+	for (int i = 0; i < getFoodUnit(); i++) {
 		sound();
 	}
 	weight++;
@@ -33,9 +33,20 @@ void Pig::die() {
 	sound();
 }
 
-int Pig::reproduce() {
-	int r = rand() % 2;
-	return r + 1;
+list<Animal*> Pig::reproduce() {
+	list<Animal*> children;
+	if (age == 2 && weight >= 0.0) {
+		int r = rand() % 2 + 1;
+		cout << "Pig moi de"<< r <<" con...";
+		for (int i = 0; i < r; i++) {
+			Pig *a = new Pig();
+			a->setName("ChildOf" + name);
+			a->sound();
+			a->sound();
+			children.push_back(a);
+		}
+	}
+	return children;
 }
 
 Pig::~Pig() {
@@ -56,8 +67,8 @@ void Pig::onHourChange(int h) {
 }
 
 void Pig::onDayChange(int d) {
+	removeDieListener();
 	age++;
-
 }
 
 void Pig::printSound() {

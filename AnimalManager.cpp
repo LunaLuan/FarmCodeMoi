@@ -8,6 +8,7 @@
 #include "AnimalManager.h"
 
 AnimalManager::AnimalManager() {
+	TimeManager::getInstance()->addAnimalManager(this);
 	resourceListener = new ResuorceManager();
 }
 
@@ -181,6 +182,28 @@ void AnimalManager::feedAnimalByName(string name) {
 	}
 }
 
+void AnimalManager::onDayChange(int d) {
+	list<Animal*>::iterator animal = animals.begin();
+	while (animal != animals.end()) {
+		list<Animal*> li = (*animal)->reproduce();
+
+		list<Animal*>::iterator i = li.begin();
+		while (i != li.end()) {
+			addNewAnimal((*i));
+			i++;
+		}
+
+		animal++;
+	}
+
+	// kiem tra xem co con nao chet ko
+	removeDieAnimal();
+}
+
+void AnimalManager::onHourChange(int h) {
+
+}
+
 void AnimalManager::addNewAnimal(Animal* animal) {
 	list<Animal*>::iterator i = animals.begin();
 	while (i != animals.end()) {
@@ -191,3 +214,15 @@ void AnimalManager::addNewAnimal(Animal* animal) {
 	animals.push_back(animal);
 }
 
+void AnimalManager::removeDieAnimal() {
+	cout << "Nhay vao day..." << endl;
+	list<Animal*>::iterator iterator = animals.begin();
+	while (iterator != animals.end()) {
+		if ((*iterator)->getDie()) {
+			TimeManager::getInstance()->removeTimeObsever((*iterator));
+			animals.erase(iterator++);
+		} else {
+			++iterator;
+		}
+	}
+}

@@ -38,10 +38,24 @@ void Cat::die() {
 	sound();
 	sound();
 	sound();
+
+	isDie = true;
+	cout << name << "(" << type << ")" << "da chet" << endl;
 }
 
-int Cat::reproduce() {
-	return 1;
+list<Animal*> Cat::reproduce() {
+	list<Animal*> children;
+		if (age == 18 && weight == 4.0 && happyIndex == 10) {
+			int r = 1;
+			cout << "Cat moi de con...";
+			for (int i = 0; i < r; i++) {
+				Cat *a = new Cat();
+				a->setName("ChildOf" + name);
+				a->sound();a->sound();
+				children.push_back(a);
+			}
+		}
+		return children;
 }
 
 Cat::~Cat() {
@@ -69,8 +83,12 @@ void Cat::onHourChange(int h) {
 }
 
 void Cat::onDayChange(int d) {
-	age ++;
-	soundCount++;
+	removeDieListener();
+	age++;
+	soundCount = 0;
+	if(age == 2) {
+		die();
+	}
 }
 
 void Cat::printSound() {

@@ -21,7 +21,7 @@ public:
 	virtual void goOut() = 0;
 	virtual void goBack() = 0;
 	virtual void die() = 0;
-	virtual int reproduce() = 0;
+	virtual list<Animal*> reproduce() = 0;
 
 	virtual void listen(Animal *a) = 0;
 	virtual void onHourChange(int h) = 0;

@@ -23,7 +23,7 @@ public:
 	virtual void goOut();
 	virtual void goBack();
 	virtual void die();
-	virtual int reproduce();
+	virtual list<Animal*> reproduce();
 	virtual void listen(Animal *a);
 	virtual int getFoodUnit();
 

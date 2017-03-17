@@ -10,7 +10,13 @@
 Animal::Animal() {
 	TimeManager::getInstance()->addTimeObsever(this);
 	age = 0;
+	weight = 0.0;
 	soundCount = 0;
+
+	eatDays = 0;
+
+	isDie = false;
+	isOut = false;
 }
 
 string Animal::getName() {
@@ -46,9 +52,16 @@ void Animal::addListener(Animal *a) {
 	listeners.push_back(a);
 }
 
-void Animal::removeListener(Animal *a) {
-
-
+void Animal::removeDieListener() {
+	list<Animal*>::iterator iterator = listeners.begin();
+	while(iterator != listeners.end()) {
+		if((*iterator)->isDie) {
+			listeners.erase(iterator++);
+		}
+		else {
+			++iterator;
+		}
+	}
 }
 
 int Animal::getPriceSell() {
@@ -71,11 +84,15 @@ string Animal::getType() {
 	return type;
 }
 
+bool Animal::getDie() {
+	return isDie;
+}
 
 void Animal::notifyListener() {
-	int size = listeners.size();
-	for (int i = 0; i < size; i++) {
-		listeners[i]->listen(this);
+	list<Animal*>::iterator i = listeners.begin();
+	while(i != listeners.end()) {
+		(*i)->listen(this);
+		i++;
 	}
 }
 

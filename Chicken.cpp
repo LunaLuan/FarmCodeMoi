@@ -41,9 +41,20 @@ void Chicken::die() {
 	}
 }
 
-int Chicken::reproduce() {
-	int r = rand() % 3;
-	return r + 1;
+list<Animal*> Chicken::reproduce() {
+	list<Animal*> children;
+	if (age == 13 && weight == 2.0 && happyIndex == 10) {
+		int r = rand() % 3;
+		cout << "Chicken moi de con...";
+		for (int i = 0; i < r; i++) {
+			Chicken *a = new Chicken();
+			a->setName("ChildOf" + name);
+			a->sound();a->sound();a->sound();
+			children.push_back(a);
+		}
+	}
+	return children;
+
 
 }
 
@@ -55,7 +66,8 @@ void Chicken::onHourChange(int h) {
 }
 
 void Chicken::onDayChange(int d) {
-	age ++;
+	removeDieListener();
+	age++;
 	soundCount = 0;
 }
 
@@ -68,19 +80,19 @@ void Chicken::printSound() {
 }
 
 void Chicken::listen(Animal *a) {
-	if(dynamic_cast<Cat*>(a)) {
+	if (dynamic_cast<Cat*>(a)) {
 		soundCount++;
 	}
-	if(dynamic_cast<Dog*>(a)) {
+	if (dynamic_cast<Dog*>(a)) {
 		soundCount++;
 	}
-	if(dynamic_cast<Pig*>(a)) {
+	if (dynamic_cast<Pig*>(a)) {
 		soundCount++;
 	}
 
-	if(soundCount == 4) {
+	if (soundCount == 4) {
 		cout << "Ga dang buc minh vi cac con vat khac...\n";
-		happyIndex --;
+		happyIndex--;
 	}
 }
 

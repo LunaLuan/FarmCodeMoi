@@ -14,10 +14,11 @@
 #include <iostream>
 #include <list>
 #include <typeinfo>
+#include "TimeObserver.h"
 
 using namespace std;
 
-class AnimalManager {
+class AnimalManager : public TimeObserver {
 public:
 	AnimalManager();
 
@@ -32,6 +33,9 @@ public:
 
 	void setResourceListener(ResuorceManager *resource);
 
+	virtual void onDayChange(int d);
+	virtual void onHourChange(int h);
+
 	friend ostream& operator<<(ostream &os, AnimalManager &am);
 	virtual ~AnimalManager();
 protected:
@@ -39,6 +43,7 @@ protected:
 	list<Animal *> animals;
 
 	void addNewAnimal(Animal *animal);
+	void removeDieAnimal();
 
 };
 

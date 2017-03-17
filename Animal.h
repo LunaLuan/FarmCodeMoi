@@ -10,13 +10,16 @@
 
 #include <iostream>
 #include <vector>
+#include <list>
 #include "TimeManager.h"
-#include"TimeObserver.h"
+#include "TimeObserver.h"
 using namespace std;
 
 class Animal: public TimeObserver {
 public:
 	Animal();
+
+	bool getDie();
 
 	string getName();
 	void setName(string n);
@@ -41,13 +44,13 @@ public:
 	virtual void goOut() = 0;
 	virtual void goBack() = 0;
 	virtual void die() = 0;
-	virtual int reproduce() = 0;
+	virtual list<Animal*> reproduce() = 0;
 
 	virtual int getFoodUnit() = 0;
 
 	virtual void listen(Animal *a) = 0;
 	void addListener(Animal *a);
-	void removeListener(Animal *a);
+	void removeDieListener();
 
 	virtual void onHourChange(int h) = 0;
 	virtual void onDayChange(int d) = 0;
@@ -71,10 +74,15 @@ protected:
 	int eatDays;
 	int foodUnit;
 
-	vector<Animal*> listeners;
+	bool isDie;
+	bool isOut;
+	int lifeTime;
+
+	list<Animal*> listeners;
 
 	virtual void printSound() = 0;
 	void notifyListener();
+
 };
 
 #endif /* ANIMAL_H_ */
