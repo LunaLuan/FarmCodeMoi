@@ -31,7 +31,11 @@ public:
 	void feedAnimalByType(string type);
 	void feedAnimalByName(string name);
 
+	void letAnimals(bool isOut);
+	void letAnimals(string type, bool isOut);
+
 	void setResourceListener(ResuorceManager *resource);
+
 
 	virtual void onDayChange(int d);
 	virtual void onHourChange(int h);

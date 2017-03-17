@@ -41,9 +41,12 @@ public:
 	void sound();
 
 	virtual void eat() = 0;
+
 	virtual void goOut() = 0;
 	virtual void goBack() = 0;
+
 	virtual void die() = 0;
+
 	virtual list<Animal*> reproduce() = 0;
 
 	virtual int getFoodUnit() = 0;
@@ -59,11 +62,18 @@ public:
 
 protected:
 	/**
-	 *	ten con vat...
+	 *	name of animal (examples: Thomas...)
 	 **/
 	string name;
+
+	/**
+	 * type of animal (examples: Dog, Chicken, Frog...)
+	 */
 	string type;
 
+	/**
+	 * age of animal
+	 */
 	int age;
 	float weight;
 
@@ -76,6 +86,7 @@ protected:
 
 	bool isDie;
 	bool isOut;
+	bool isEat;
 	int lifeTime;
 
 	list<Animal*> listeners;

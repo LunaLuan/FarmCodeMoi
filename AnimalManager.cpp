@@ -214,8 +214,13 @@ void AnimalManager::addNewAnimal(Animal* animal) {
 	animals.push_back(animal);
 }
 
+void AnimalManager::letAnimals(bool isOut) {
+}
+
+void AnimalManager::letAnimals(string type, bool isOut) {
+}
+
 void AnimalManager::removeDieAnimal() {
-	cout << "Nhay vao day..." << endl;
 	list<Animal*>::iterator iterator = animals.begin();
 	while (iterator != animals.end()) {
 		if ((*iterator)->getDie()) {

@@ -8,6 +8,7 @@
 #include "Cat.h"
 
 Cat::Cat() {
+	lifeTime = 20;
 	type = "Cat";
 	setPriceSell(4);
 	setPriceBuy(7);
@@ -18,12 +19,7 @@ void Cat::eat() {
 	for (int i = 0; i < getFoodUnit(); i++) {
 		sound();
 	}
-	eatDays++;
-	if (eatDays == 3) {
-		weight++;
-		eatDays = 0;
-	}
-
+	isEat = true;
 }
 
 void Cat::goOut() {
@@ -40,14 +36,14 @@ void Cat::die() {
 	sound();
 
 	isDie = true;
-	cout << name << "(" << type << ")" << "da chet" << endl;
+	cout << name << "(" << type << ")" << " dead..." << endl;
 }
 
 list<Animal*> Cat::reproduce() {
 	list<Animal*> children;
 		if (age == 18 && weight == 4.0 && happyIndex == 10) {
 			int r = 1;
-			cout << "Cat moi de con...";
+			cout << "Cat born baby...";
 			for (int i = 0; i < r; i++) {
 				Cat *a = new Cat();
 				a->setName("ChildOf" + name);
@@ -71,7 +67,7 @@ void Cat::listen(Animal *a) {
 	}
 
 	if(soundCount == 15) {
-		cout << "Meo dang buc minh vi cac con vat khac...";
+		cout << "Cat reduce happy index...";
 		happyIndex--;
 	}
 }
@@ -83,12 +79,30 @@ void Cat::onHourChange(int h) {
 }
 
 void Cat::onDayChange(int d) {
+	// Xoa nhung con da chet
 	removeDieListener();
 	age++;
+
 	soundCount = 0;
-	if(age == 2) {
+	if(age == lifeTime) {
 		die();
+		return;
 	}
+
+
+	if(isEat) {
+		eatDays++;
+		if (eatDays == 3) {
+			weight++;
+			eatDays = 0;
+		}
+	}
+	else {
+		eatDays = 0;
+	}
+	isEat = false;
+
+	dieBecauseSad();
 }
 
 void Cat::printSound() {

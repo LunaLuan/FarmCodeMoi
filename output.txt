@@ -1,0 +1,12 @@
+ Day: 0
+	Time: 0AM
+	Time: 1AM
+...Meow
+...Meow
+...Meow
+...Meow
+...Meow
+Dog reduce happy index...
+...Meow
+	Time: 2AM
+	Time: 3AM

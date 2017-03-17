@@ -8,8 +8,8 @@
 #include "EmotionAnimal.h"
 
 EmotionAnimal::EmotionAnimal() {
-	// TODO Auto-generated constructor stub
-	setHappyIndex(7);
+	happyIndex = 7;
+	sadDays = 0;
 }
 
 int EmotionAnimal::getHappyIndex() {
@@ -32,3 +32,18 @@ EmotionAnimal::~EmotionAnimal() {
 	// TODO Auto-generated destructor stub
 }
 
+bool EmotionAnimal::dieBecauseSad() {
+	if(happyIndex == 0) {
+		sadDays ++;
+	}
+	else {
+		sadDays = 0;
+	}
+
+	if(sadDays == 3) {
+		die();
+		return true;
+	}
+	else
+		return false;
+}

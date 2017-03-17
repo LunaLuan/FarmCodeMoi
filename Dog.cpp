@@ -8,6 +8,7 @@
 #include "Dog.h"
 
 Dog::Dog() {
+	lifeTime = 25;
 	type = "Dog";
 	setPriceBuy(8);
 	setPriceSell(5);
@@ -26,15 +27,16 @@ void Dog::eat() {
 	for (int i = 0; i < getFoodUnit(); i++) {
 		sound();
 	}
-	eatDays++;
-	if (eatDays == 2) {
-		weight++;
-		eatDays = 0;
-	}
+	isEat = true;
 }
 
 void Dog::goOut() {
-
+	int currentHour = TimeManager::getInstance()->getGHour();
+	if(currentHour > 4 && currentHour <23) {
+		isOut = true;
+	}
+	else
+		cout << "Cho khong ra ngoai vao gio nay...";
 }
 
 void Dog::goBack() {
@@ -49,7 +51,8 @@ void Dog::die() {
 
 list<Animal*> Dog::reproduce() {
 	list<Animal*> children;
-	if (age == 22 && weight == 7.0 && happyIndex == 10 && intelligenceIndex == 10) {
+	if (age == 22 && weight == 7.0 && happyIndex == 10
+			&& intelligenceIndex == 10) {
 		int r = rand() % 3;
 		cout << "Dog moi de con...";
 		for (int i = 0; i < r; i++) {
@@ -71,7 +74,7 @@ void Dog::listen(Animal *a) {
 		soundCount++;
 	}
 	if (soundCount == 5) {
-		cout << "Cho dang buc minh vi cac con vat khac...\n";
+		cout << "Dog reduce happy index...\n";
 		happyIndex--;
 	}
 }
@@ -85,6 +88,20 @@ void Dog::onDayChange(int d) {
 	removeDieListener();
 	age++;
 	soundCount = 0;
+	if (age == lifeTime) {
+		die();
+	}
+
+	if (isEat) {
+		eatDays++;
+		if (eatDays == 2) {
+			weight++;
+			eatDays = 0;
+		}
+	} else {
+		eatDays = 0;
+	}
+	isEat = false;
 }
 
 void Dog::printSound() {

@@ -33,7 +33,11 @@ public:
 
 protected:
 	int happyIndex;
+	int sadDays;
 	virtual void printSound() = 0;
+	bool dieBecauseSad();
+
+
 };
 
 #endif /* EMOTIONANIMAL_H_ */

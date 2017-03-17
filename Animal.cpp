@@ -17,6 +17,7 @@ Animal::Animal() {
 
 	isDie = false;
 	isOut = false;
+	isEat = false;
 }
 
 string Animal::getName() {

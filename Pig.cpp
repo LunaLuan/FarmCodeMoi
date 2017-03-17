@@ -8,6 +8,7 @@
 #include "Pig.h"
 
 Pig::Pig() {
+	lifeTime = 22;
 	type = "Pig";
 	setPriceBuy(6);
 }
@@ -37,7 +38,7 @@ list<Animal*> Pig::reproduce() {
 	list<Animal*> children;
 	if (age == 2 && weight >= 0.0) {
 		int r = rand() % 2 + 1;
-		cout << "Pig moi de"<< r <<" con...";
+		cout << "Pig born " << r << " baby..." << endl;
 		for (int i = 0; i < r; i++) {
 			Pig *a = new Pig();
 			a->setName("ChildOf" + name);
@@ -69,6 +70,22 @@ void Pig::onHourChange(int h) {
 void Pig::onDayChange(int d) {
 	removeDieListener();
 	age++;
+	if (age == lifeTime) {
+		die();
+		return;
+	}
+
+	if (isEat) {
+		eatDays++;
+		if (eatDays == 1) {
+			weight++;
+			eatDays = 0;
+		}
+	} else {
+		eatDays = 0;
+	}
+	isEat = false;
+
 }
 
 void Pig::printSound() {

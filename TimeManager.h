@@ -31,11 +31,11 @@ public:
 private:
 	TimeManager();
 	static TimeManager *timeManager;
-	int lastHour = -1;
-	int lastDay = -1;
-	int g_day=0;
-	int g_hour=0;
-	int timePluss=0;
+	int lastHour ;
+	int lastDay ;
+	int g_day;
+	int g_hour;
+	int timePluss;
 	clock_t start;
 	int duration;// thoi gian hien tai
 

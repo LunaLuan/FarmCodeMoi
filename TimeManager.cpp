@@ -11,8 +11,13 @@ TimeManager * TimeManager::getInstance() {
 
 TimeManager::TimeManager() {
 	start = clock(); // start time
-	//g_day = 0;
-	// g_hour = 0;
+	g_day = 0;
+	g_hour = 0;
+
+	lastHour = -1;
+	lastDay = -1;
+
+	timePluss = 0;
 }
 
 int TimeManager::getGDay() {

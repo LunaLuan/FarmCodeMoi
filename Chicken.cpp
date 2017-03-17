@@ -8,6 +8,7 @@
 #include "Chicken.h"
 
 Chicken::Chicken() {
+	lifeTime = 15;
 	type = "Chicken";
 	setPriceSell(2);
 	setPriceBuy(4);
@@ -45,16 +46,17 @@ list<Animal*> Chicken::reproduce() {
 	list<Animal*> children;
 	if (age == 13 && weight == 2.0 && happyIndex == 10) {
 		int r = rand() % 3;
-		cout << "Chicken moi de con...";
+		cout << "Chicken born baby...";
 		for (int i = 0; i < r; i++) {
 			Chicken *a = new Chicken();
 			a->setName("ChildOf" + name);
-			a->sound();a->sound();a->sound();
+			a->sound();
+			a->sound();
+			a->sound();
 			children.push_back(a);
 		}
 	}
 	return children;
-
 
 }
 
@@ -69,6 +71,21 @@ void Chicken::onDayChange(int d) {
 	removeDieListener();
 	age++;
 	soundCount = 0;
+	if (age == lifeTime) {
+		die();
+	}
+	if (isEat) {
+		eatDays++;
+		if (eatDays == 2) {
+			weight += 0.2;
+			eatDays = 0;
+		}
+	} else {
+		eatDays = 0;
+	}
+	isEat = false;
+
+	dieBecauseSad();
 }
 
 Chicken::~Chicken() {
@@ -90,8 +107,8 @@ void Chicken::listen(Animal *a) {
 		soundCount++;
 	}
 
-	if (soundCount == 4) {
-		cout << "Ga dang buc minh vi cac con vat khac...\n";
+	if (soundCount == 10) {
+		cout << "Chicken reduce happy index...\n";
 		happyIndex--;
 	}
 }

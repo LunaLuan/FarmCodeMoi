@@ -3,10 +3,13 @@
 #include "MacDonald.h"
 #include "Animal.h"
 #include "TimeManager.h"
+#include <fstream>
 
 using namespace std;
 
 int main() {
+	freopen("output.txt","w",stdout);
+
 	AnimalManager am;
 
 	am.buyAnimal("Dog", "Dog1");
