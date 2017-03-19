@@ -54,42 +54,19 @@ void TimeManager::covertTime() {
 
 }
 
-void TimeManager::addTimeObsever(TimeObserver * observer) {
-	timeObservers.push_back(observer);
-}
-
 void TimeManager::notifyHourChange() {
-	for (list<TimeObserver*>::iterator t = timeObservers.begin();
-			t != timeObservers.end(); t++) {
-		(*t)->onHourChange(g_hour);
-	}
 	animalManager->onHourChange(g_hour);
 }
 
 void TimeManager::notifyDayChange() {
-	for (list<TimeObserver*>::iterator t = timeObservers.begin();
-			t != timeObservers.end(); t++) {
-		(*t)->onDayChange(g_day);
-	}
 	animalManager->onDayChange(g_day);
 }
 
 TimeManager::~TimeManager() {
 }
 
-void TimeManager::removeTimeObsever(TimeObserver* observer) {
-	for (list<TimeObserver*>::iterator t = timeObservers.begin();
-			t != timeObservers.end();) {
-		if (observer == (*t)) {
-			timeObservers.erase(t++);
-		} else {
-			++t;
-		}
-	}
 
-}
-
-void TimeManager::addAnimalManager(TimeObserver* observer) {
+void TimeManager::setAnimalManager(TimeObserver* observer) {
 	animalManager = observer;
 }
 

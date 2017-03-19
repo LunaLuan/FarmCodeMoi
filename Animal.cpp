@@ -8,7 +8,6 @@
 #include "Animal.h"
 
 Animal::Animal() {
-	TimeManager::getInstance()->addTimeObsever(this);
 	age = 0;
 	weight = 0.0;
 	soundCount = 0;
@@ -16,8 +15,10 @@ Animal::Animal() {
 	eatDays = 0;
 
 	isDie = false;
-	isOut = false;
 	isEat = false;
+
+	isOut = false;
+	isGoOutInDay = false;
 }
 
 string Animal::getName() {
@@ -49,20 +50,8 @@ void Animal::sound() {
 	notifyListener();
 }
 
-void Animal::addListener(Animal *a) {
-	listeners.push_back(a);
-}
-
-void Animal::removeDieListener() {
-	list<Animal*>::iterator iterator = listeners.begin();
-	while(iterator != listeners.end()) {
-		if((*iterator)->isDie) {
-			listeners.erase(iterator++);
-		}
-		else {
-			++iterator;
-		}
-	}
+void Animal::setListener(list<Animal*> *l) {
+	listeners = l;
 }
 
 int Animal::getPriceSell() {
@@ -89,10 +78,32 @@ bool Animal::getDie() {
 	return isDie;
 }
 
+void Animal::goOut() {
+	if (isGoOutInDay) {
+		cout << name << " da ra ngoai hom nay...\n";
+	} else {
+		isOut = true;
+		isGoOutInDay = true;
+		cout << name << " da ra ngoai choi...\n";
+	}
+}
+
+void Animal::goBack() {
+	isOut = false;
+	isGoOutInDay =false;
+	cout << type << " da tro ve...\n";
+}
+
+bool Animal::isGoOut() {
+	return isOut;
+}
+
 void Animal::notifyListener() {
-	list<Animal*>::iterator i = listeners.begin();
-	while(i != listeners.end()) {
-		(*i)->listen(this);
+	list<Animal*>::iterator i = (*listeners).begin();
+	while (i != (*listeners).end()) {
+		if (!(*i)->isOut) {
+			(*i)->listen(this);
+		}
 		i++;
 	}
 }

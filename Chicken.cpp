@@ -28,10 +28,13 @@ void Chicken::eat() {
 }
 
 void Chicken::goOut() {
+	Animal::goOut();
+	cout << name << " da duoc phep ra ngoai\n";
 
 }
 
 void Chicken::goBack() {
+	Animal::goBack();
 
 }
 
@@ -40,6 +43,9 @@ void Chicken::die() {
 	for (int i = 0; i < d; i++) {
 		sound();
 	}
+
+	isDie = true;
+	cout << name << "(" << type << ")" << " dead..." << endl;
 }
 
 list<Animal*> Chicken::reproduce() {
@@ -50,6 +56,8 @@ list<Animal*> Chicken::reproduce() {
 		for (int i = 0; i < r; i++) {
 			Chicken *a = new Chicken();
 			a->setName("ChildOf" + name);
+			a->setListener(this->listeners);
+
 			a->sound();
 			a->sound();
 			a->sound();
@@ -68,7 +76,12 @@ void Chicken::onHourChange(int h) {
 }
 
 void Chicken::onDayChange(int d) {
-	removeDieListener();
+	EmotionAnimal::onDayChange(d);
+	if(isOut) {
+		goBack();
+	}
+
+
 	age++;
 	soundCount = 0;
 	if (age == lifeTime) {
@@ -85,7 +98,6 @@ void Chicken::onDayChange(int d) {
 	}
 	isEat = false;
 
-	dieBecauseSad();
 }
 
 Chicken::~Chicken() {
@@ -97,19 +109,17 @@ void Chicken::printSound() {
 }
 
 void Chicken::listen(Animal *a) {
-	if (dynamic_cast<Cat*>(a)) {
-		soundCount++;
-	}
-	if (dynamic_cast<Dog*>(a)) {
-		soundCount++;
-	}
-	if (dynamic_cast<Pig*>(a)) {
-		soundCount++;
-	}
+	bool isCat = dynamic_cast<Cat*>(a);
+	bool isDog = dynamic_cast<Dog*>(a);
+	bool isPig = dynamic_cast<Pig*>(a);
 
-	if (soundCount == 10) {
-		cout << "Chicken reduce happy index...\n";
-		happyIndex--;
+	if (isCat || isDog || isPig) {
+		soundCount++;
+		if (soundCount == 10) {
+			cout << "Chicken reduce happy index...\n";
+			if(happyIndex > 0)
+				happyIndex--;
+		}
 	}
 }
 

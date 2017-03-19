@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Animal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalFactory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimalManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Cat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Chicken.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Dog.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="EmotionAnimal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IntelligenceAnimal.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MacDonald.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Pig.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ResuorceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeObserver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalFactory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimalManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Cat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Chicken.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Dog.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="EmotionAnimal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IntelligenceAnimal.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MacDonald.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Pig.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResuorceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeObserver.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="html\annotated.html" />
+    <None Include="html\classes.html" />
+    <None Include="html\class_animal-members.html" />
+    <None Include="html\class_animal.html" />
+    <None Include="html\class_animal_factory-members.html" />
+    <None Include="html\class_animal_factory.html" />
+    <None Include="html\class_animal_manager-members.html" />
+    <None Include="html\class_animal_manager.html" />
+    <None Include="html\class_cat-members.html" />
+    <None Include="html\class_cat.html" />
+    <None Include="html\class_chicken-members.html" />
+    <None Include="html\class_chicken.html" />
+    <None Include="html\class_dog-members.html" />
+    <None Include="html\class_dog.html" />
+    <None Include="html\class_emotion_animal-members.html" />
+    <None Include="html\class_emotion_animal.html" />
+    <None Include="html\class_intelligence_animal-members.html" />
+    <None Include="html\class_intelligence_animal.html" />
+    <None Include="html\class_mac_donald-members.html" />
+    <None Include="html\class_mac_donald.html" />
+    <None Include="html\class_pig-members.html" />
+    <None Include="html\class_pig.html" />
+    <None Include="html\class_resuorce_manager-members.html" />
+    <None Include="html\class_resuorce_manager.html" />
+    <None Include="html\class_time_manager-members.html" />
+    <None Include="html\class_time_manager.html" />
+    <None Include="html\class_time_observer-members.html" />
+    <None Include="html\class_time_observer.html" />
+    <None Include="html\class_utils-members.html" />
+    <None Include="html\class_utils.html" />
+    <None Include="html\files.html" />
+    <None Include="html\functions.html" />
+    <None Include="html\functions_vars.html" />
+    <None Include="html\graph_legend.html" />
+    <None Include="html\hierarchy.html" />
+    <None Include="html\index.html" />
+    <None Include="html\inherits.html" />
+    <None Include="html\_animal_8h_source.html" />
+    <None Include="html\_animal_factory_8h_source.html" />
+    <None Include="html\_animal_manager_8h_source.html" />
+    <None Include="html\_cat_8h_source.html" />
+    <None Include="html\_chicken_8h_source.html" />
+    <None Include="html\_dog_8h_source.html" />
+    <None Include="html\_emotion_animal_8h_source.html" />
+    <None Include="html\_intelligence_animal_8h_source.html" />
+    <None Include="html\_mac_donald_8h_source.html" />
+    <None Include="html\_pig_8h_source.html" />
+    <None Include="html\_resuorce_manager_8h_source.html" />
+    <None Include="html\_time_manager_8h_source.html" />
+    <None Include="html\_time_observer_8h_source.html" />
+    <None Include="html\_utils_8h_source.html" />
+    <None Include="html\search\all_0.html" />
+    <None Include="html\search\all_1.html" />
+    <None Include="html\search\all_2.html" />
+    <None Include="html\search\all_3.html" />
+    <None Include="html\search\all_4.html" />
+    <None Include="html\search\all_5.html" />
+    <None Include="html\search\all_6.html" />
+    <None Include="html\search\all_7.html" />
+    <None Include="html\search\all_8.html" />
+    <None Include="html\search\all_9.html" />
+    <None Include="html\search\all_a.html" />
+    <None Include="html\search\classes_0.html" />
+    <None Include="html\search\classes_1.html" />
+    <None Include="html\search\classes_2.html" />
+    <None Include="html\search\classes_3.html" />
+    <None Include="html\search\classes_4.html" />
+    <None Include="html\search\classes_5.html" />
+    <None Include="html\search\classes_6.html" />
+    <None Include="html\search\classes_7.html" />
+    <None Include="html\search\classes_8.html" />
+    <None Include="html\search\classes_9.html" />
+    <None Include="html\search\nomatches.html" />
+    <None Include="html\search\variables_0.html" />
+    <None Include="html\search\variables_1.html" />
+    <None Include="html\search\variables_2.html" />
+    <None Include="ClassDiagram.cd" />
+  </ItemGroup>
+</Project>

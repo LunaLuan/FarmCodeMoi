@@ -46,7 +46,6 @@ protected:
 	ResuorceManager *resourceListener;
 	list<Animal *> animals;
 
-	void addNewAnimal(Animal *animal);
 	void removeDieAnimal();
 
 };

@@ -23,11 +23,11 @@ void Cat::eat() {
 }
 
 void Cat::goOut() {
-
+	EmotionAnimal::goOut();
 }
 
 void Cat::goBack() {
-
+	EmotionAnimal::goBack();
 }
 
 void Cat::die() {
@@ -41,17 +41,20 @@ void Cat::die() {
 
 list<Animal*> Cat::reproduce() {
 	list<Animal*> children;
-		if (age == 18 && weight == 4.0 && happyIndex == 10) {
-			int r = 1;
-			cout << "Cat born baby...";
-			for (int i = 0; i < r; i++) {
-				Cat *a = new Cat();
-				a->setName("ChildOf" + name);
-				a->sound();a->sound();
-				children.push_back(a);
-			}
+	if (age == 18 && weight == 4.0 && happyIndex == 10) {
+		int r = 1;
+		cout << "Cat born baby...";
+		for (int i = 0; i < r; i++) {
+			Cat *a = new Cat();
+			a->setName("ChildOf" + name);
+			a->setListener(this->listeners);
+
+			a->sound();
+			a->sound();
+			children.push_back(a);
 		}
-		return children;
+	}
+	return children;
 }
 
 Cat::~Cat() {
@@ -59,16 +62,16 @@ Cat::~Cat() {
 }
 
 void Cat::listen(Animal *a) {
-	if(dynamic_cast<Dog*>(a)) {
-		soundCount++;
-	}
-	if(dynamic_cast<Chicken*>(a)) {
-		soundCount++;
-	}
+	bool isDog = dynamic_cast<Dog*>(a);
+	bool isChicken = dynamic_cast<Chicken*>(a);
 
-	if(soundCount == 15) {
-		cout << "Cat reduce happy index...";
-		happyIndex--;
+	if (isDog || isChicken) {
+		soundCount++;
+		if (soundCount == 15) {
+			cout << "Cat reduce happy index...";
+			if(happyIndex > 0)
+				happyIndex--;
+		}
 	}
 }
 
@@ -79,30 +82,28 @@ void Cat::onHourChange(int h) {
 }
 
 void Cat::onDayChange(int d) {
-	// Xoa nhung con da chet
-	removeDieListener();
+	EmotionAnimal::onDayChange(d);
+
 	age++;
 
 	soundCount = 0;
-	if(age == lifeTime) {
+	if (age == lifeTime) {
 		die();
 		return;
 	}
 
-
-	if(isEat) {
+	if (isEat) {
 		eatDays++;
 		if (eatDays == 3) {
 			weight++;
 			eatDays = 0;
 		}
-	}
-	else {
+	} else {
 		eatDays = 0;
 	}
 	isEat = false;
 
-	dieBecauseSad();
+
 }
 
 void Cat::printSound() {

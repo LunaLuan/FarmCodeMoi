@@ -11,6 +11,7 @@
 #include <iostream>
 #include <vector>
 #include <list>
+
 #include "TimeManager.h"
 #include "TimeObserver.h"
 using namespace std;
@@ -42,8 +43,8 @@ public:
 
 	virtual void eat() = 0;
 
-	virtual void goOut() = 0;
-	virtual void goBack() = 0;
+	virtual void goOut();
+	virtual void goBack();
 
 	virtual void die() = 0;
 
@@ -52,11 +53,12 @@ public:
 	virtual int getFoodUnit() = 0;
 
 	virtual void listen(Animal *a) = 0;
-	void addListener(Animal *a);
-	void removeDieListener();
+	void setListener(list<Animal*> *l);
 
 	virtual void onHourChange(int h) = 0;
 	virtual void onDayChange(int d) = 0;
+
+	bool isGoOut();
 
 	virtual ~Animal();
 
@@ -85,11 +87,14 @@ protected:
 	int foodUnit;
 
 	bool isDie;
-	bool isOut;
+
 	bool isEat;
 	int lifeTime;
 
-	list<Animal*> listeners;
+	bool isOut;
+	bool isGoOutInDay;
+
+	list<Animal*> *listeners;
 
 	virtual void printSound() = 0;
 	void notifyListener();

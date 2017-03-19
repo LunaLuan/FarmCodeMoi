@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{44E8E853-66EB-4D0E-9EDA-EB76F5D61D09}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Animal.cpp" />
+    <ClCompile Include="AnimalFactory.cpp" />
+    <ClCompile Include="AnimalManager.cpp" />
+    <ClCompile Include="Cat.cpp" />
+    <ClCompile Include="Chicken.cpp" />
+    <ClCompile Include="Dog.cpp" />
+    <ClCompile Include="EmotionAnimal.cpp" />
+    <ClCompile Include="IntelligenceAnimal.cpp" />
+    <ClCompile Include="MacDonald.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Pig.cpp" />
+    <ClCompile Include="ResuorceManager.cpp" />
+    <ClCompile Include="TimeManager.cpp" />
+    <ClCompile Include="TimeObserver.cpp" />
+    <ClCompile Include="Utils.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Animal.h" />
+    <ClInclude Include="AnimalFactory.h" />
+    <ClInclude Include="AnimalManager.h" />
+    <ClInclude Include="Cat.h" />
+    <ClInclude Include="Chicken.h" />
+    <ClInclude Include="Dog.h" />
+    <ClInclude Include="EmotionAnimal.h" />
+    <ClInclude Include="IntelligenceAnimal.h" />
+    <ClInclude Include="MacDonald.h" />
+    <ClInclude Include="Pig.h" />
+    <ClInclude Include="ResuorceManager.h" />
+    <ClInclude Include="TimeManager.h" />
+    <ClInclude Include="TimeObserver.h" />
+    <ClInclude Include="Utils.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
+    <None Include="html\annotated.html" />
+    <None Include="html\classes.html" />
+    <None Include="html\class_animal-members.html" />
+    <None Include="html\class_animal.html" />
+    <None Include="html\class_animal_factory-members.html" />
+    <None Include="html\class_animal_factory.html" />
+    <None Include="html\class_animal_manager-members.html" />
+    <None Include="html\class_animal_manager.html" />
+    <None Include="html\class_cat-members.html" />
+    <None Include="html\class_cat.html" />
+    <None Include="html\class_chicken-members.html" />
+    <None Include="html\class_chicken.html" />
+    <None Include="html\class_dog-members.html" />
+    <None Include="html\class_dog.html" />
+    <None Include="html\class_emotion_animal-members.html" />
+    <None Include="html\class_emotion_animal.html" />
+    <None Include="html\class_intelligence_animal-members.html" />
+    <None Include="html\class_intelligence_animal.html" />
+    <None Include="html\class_mac_donald-members.html" />
+    <None Include="html\class_mac_donald.html" />
+    <None Include="html\class_pig-members.html" />
+    <None Include="html\class_pig.html" />
+    <None Include="html\class_resuorce_manager-members.html" />
+    <None Include="html\class_resuorce_manager.html" />
+    <None Include="html\class_time_manager-members.html" />
+    <None Include="html\class_time_manager.html" />
+    <None Include="html\class_time_observer-members.html" />
+    <None Include="html\class_time_observer.html" />
+    <None Include="html\class_utils-members.html" />
+    <None Include="html\class_utils.html" />
+    <None Include="html\files.html" />
+    <None Include="html\functions.html" />
+    <None Include="html\functions_vars.html" />
+    <None Include="html\graph_legend.html" />
+    <None Include="html\hierarchy.html" />
+    <None Include="html\index.html" />
+    <None Include="html\inherits.html" />
+    <None Include="html\search\all_0.html" />
+    <None Include="html\search\all_1.html" />
+    <None Include="html\search\all_2.html" />
+    <None Include="html\search\all_3.html" />
+    <None Include="html\search\all_4.html" />
+    <None Include="html\search\all_5.html" />
+    <None Include="html\search\all_6.html" />
+    <None Include="html\search\all_7.html" />
+    <None Include="html\search\all_8.html" />
+    <None Include="html\search\all_9.html" />
+    <None Include="html\search\all_a.html" />
+    <None Include="html\search\classes_0.html" />
+    <None Include="html\search\classes_1.html" />
+    <None Include="html\search\classes_2.html" />
+    <None Include="html\search\classes_3.html" />
+    <None Include="html\search\classes_4.html" />
+    <None Include="html\search\classes_5.html" />
+    <None Include="html\search\classes_6.html" />
+    <None Include="html\search\classes_7.html" />
+    <None Include="html\search\classes_8.html" />
+    <None Include="html\search\classes_9.html" />
+    <None Include="html\search\nomatches.html" />
+    <None Include="html\search\variables_0.html" />
+    <None Include="html\search\variables_1.html" />
+    <None Include="html\search\variables_2.html" />
+    <None Include="html\_animal_8h_source.html" />
+    <None Include="html\_animal_factory_8h_source.html" />
+    <None Include="html\_animal_manager_8h_source.html" />
+    <None Include="html\_cat_8h_source.html" />
+    <None Include="html\_chicken_8h_source.html" />
+    <None Include="html\_dog_8h_source.html" />
+    <None Include="html\_emotion_animal_8h_source.html" />
+    <None Include="html\_intelligence_animal_8h_source.html" />
+    <None Include="html\_mac_donald_8h_source.html" />
+    <None Include="html\_pig_8h_source.html" />
+    <None Include="html\_resuorce_manager_8h_source.html" />
+    <None Include="html\_time_manager_8h_source.html" />
+    <None Include="html\_time_observer_8h_source.html" />
+    <None Include="html\_utils_8h_source.html" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

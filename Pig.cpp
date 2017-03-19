@@ -32,6 +32,9 @@ void Pig::die() {
 	sound();
 	sound();
 	sound();
+
+	isDie = true;
+	cout << name << "(" << type << ")" << " dead..." << endl;
 }
 
 list<Animal*> Pig::reproduce() {
@@ -42,6 +45,8 @@ list<Animal*> Pig::reproduce() {
 		for (int i = 0; i < r; i++) {
 			Pig *a = new Pig();
 			a->setName("ChildOf" + name);
+			a->setListener(this->listeners);
+
 			a->sound();
 			a->sound();
 			children.push_back(a);
@@ -68,7 +73,10 @@ void Pig::onHourChange(int h) {
 }
 
 void Pig::onDayChange(int d) {
-	removeDieListener();
+	if (isOut) {
+		goBack();
+	}
+
 	age++;
 	if (age == lifeTime) {
 		die();

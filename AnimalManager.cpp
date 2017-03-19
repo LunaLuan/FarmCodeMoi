@@ -8,7 +8,7 @@
 #include "AnimalManager.h"
 
 AnimalManager::AnimalManager() {
-	TimeManager::getInstance()->addAnimalManager(this);
+	TimeManager::getInstance()->setAnimalManager(this);
 	resourceListener = new ResuorceManager();
 }
 
@@ -25,7 +25,9 @@ void AnimalManager::buyAnimal(string type, string name) {
 	if (resourceListener != NULL) {
 		bool buySuccess = resourceListener->onBuyAnimal(animal->getPriceBuy());
 		if (buySuccess) {
-			addNewAnimal(animal);
+			cout << "Ban da mua thanh cong..." << endl;
+			animal->setListener(&animals);
+			animals.push_back(animal);
 		} else {
 			cout << "Ban khong du tien de mua..." << endl;
 		}
@@ -184,15 +186,25 @@ void AnimalManager::feedAnimalByName(string name) {
 
 void AnimalManager::onDayChange(int d) {
 	list<Animal*>::iterator animal = animals.begin();
+
+	// B1: cho cac con vat sang onDayChange
+	while (animal != animals.end()) {
+		if ((*animal)->isGoOut() == false) {
+			(*animal)->onDayChange(d);
+		}
+		animal++;
+	}
+
+	// B2: lay danh sach cac con vat moi
+	animal = animals.begin();
 	while (animal != animals.end()) {
 		list<Animal*> li = (*animal)->reproduce();
-
 		list<Animal*>::iterator i = li.begin();
 		while (i != li.end()) {
-			addNewAnimal((*i));
+			(*i)->setListener(&animals);
+			animals.push_back((*i));
 			i++;
 		}
-
 		animal++;
 	}
 
@@ -201,30 +213,46 @@ void AnimalManager::onDayChange(int d) {
 }
 
 void AnimalManager::onHourChange(int h) {
-
-}
-
-void AnimalManager::addNewAnimal(Animal* animal) {
-	list<Animal*>::iterator i = animals.begin();
-	while (i != animals.end()) {
-		(*i)->addListener(animal);
-		animal->addListener((*i));
-		i++;
+	list<Animal*>::iterator animal = animals.begin();
+	while (animal != animals.end()) {
+		if ((*animal)->isGoOut() == false) {
+			(*animal)->onHourChange(h);
+		}
+		animal++;
 	}
-	animals.push_back(animal);
+
 }
 
 void AnimalManager::letAnimals(bool isOut) {
+	list<Animal*>::iterator iterator = animals.begin();
+	while (iterator != animals.end()) {
+		if (isOut) {
+			(*iterator)->goOut();
+		} else {
+			(*iterator)->goBack();
+		}
+		iterator++;
+	}
 }
 
 void AnimalManager::letAnimals(string type, bool isOut) {
+	list<Animal*>::iterator iterator = animals.begin();
+	while (iterator != animals.end()) {
+		if ((*iterator)->getType() == type) {
+			if (isOut) {
+				(*iterator)->goOut();
+			} else {
+				(*iterator)->goBack();
+			}
+		}
+		iterator++;
+	}
 }
 
 void AnimalManager::removeDieAnimal() {
 	list<Animal*>::iterator iterator = animals.begin();
 	while (iterator != animals.end()) {
 		if ((*iterator)->getDie()) {
-			TimeManager::getInstance()->removeTimeObsever((*iterator));
 			animals.erase(iterator++);
 		} else {
 			++iterator;

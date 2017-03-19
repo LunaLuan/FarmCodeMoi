@@ -21,9 +21,8 @@ public:
 	void covertTime();
 
 	void addTimeObsever(TimeObserver *observer);
-	void removeTimeObsever(TimeObserver *observer);
 
-	void addAnimalManager(TimeObserver *observer);
+	void setAnimalManager(TimeObserver *observer);
 	void removeAnimalManager(TimeObserver *observer);
 
 
@@ -39,7 +38,6 @@ private:
 	clock_t start;
 	int duration;// thoi gian hien tai
 
-	list<TimeObserver*> timeObservers;
 	TimeObserver *animalManager;
 
 	void notifyHourChange();

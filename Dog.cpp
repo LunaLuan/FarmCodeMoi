@@ -32,14 +32,15 @@ void Dog::eat() {
 
 void Dog::goOut() {
 	int currentHour = TimeManager::getInstance()->getGHour();
-	if(currentHour > 4 && currentHour <23) {
-		isOut = true;
-	}
-	else
+	if (currentHour > 4 && currentHour < 23) {
+		Animal::goOut();
+	} else {
 		cout << "Cho khong ra ngoai vao gio nay...";
+	}
 }
 
 void Dog::goBack() {
+	EmotionAnimal::goBack();
 
 }
 
@@ -47,6 +48,8 @@ void Dog::die() {
 	sound();
 	sound();
 
+	isDie = true;
+	cout << name << "(" << type << ")" << " dead..." << endl;
 }
 
 list<Animal*> Dog::reproduce() {
@@ -58,6 +61,7 @@ list<Animal*> Dog::reproduce() {
 		for (int i = 0; i < r; i++) {
 			Dog *a = new Dog();
 			a->setName("ChildOf" + name);
+			a->setListener(this->listeners);
 			a->sound();
 			children.push_back(a);
 		}
@@ -72,11 +76,13 @@ Dog::~Dog() {
 void Dog::listen(Animal *a) {
 	if (dynamic_cast<Cat*>(a)) {
 		soundCount++;
+		if (soundCount == 5) {
+			cout << "Dog reduce happy index...\n";
+			if (happyIndex > 0)
+				happyIndex--;
+		}
 	}
-	if (soundCount == 5) {
-		cout << "Dog reduce happy index...\n";
-		happyIndex--;
-	}
+
 }
 
 void Dog::onHourChange(int h) {
@@ -85,7 +91,11 @@ void Dog::onHourChange(int h) {
 	}
 }
 void Dog::onDayChange(int d) {
-	removeDieListener();
+	EmotionAnimal::onDayChange(d);
+	if (isOut) {
+		goBack();
+	}
+
 	age++;
 	soundCount = 0;
 	if (age == lifeTime) {

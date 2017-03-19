@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>7</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>175</x>
+      <y>0</y>
+      <w>147</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>Animal
+--
+#name: string
+#type: string
+#age: int
+#weight: float
+#priceSell: int
+#priceBuy: int
+#foodUnit: int
+#listener: list&lt;Animal&gt;
+--
++sound(): void
++eat(): void
++goOut(): void
++goBack(): void
++die(): void
++reproduce(): list&lt;Animal&gt;
++listen(Animal *a): void
++onHourChange()
++onDayChange()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>294</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Pig
+--
+
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>238</x>
+      <y>217</y>
+      <w>203</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;270.0;70.0;270.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>70</x>
+      <y>217</y>
+      <w>189</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>250.0;10.0;250.0;70.0;10.0;70.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>350</x>
+      <y>294</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>EmotionAnimal
+--
+#happyIndex: int
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>175</x>
+      <y>448</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Cat
+--
+
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>238</x>
+      <y>364</y>
+      <w>203</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>270.0;10.0;270.0;70.0;10.0;70.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>357</x>
+      <y>448</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>Chicken
+--
+
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>364</y>
+      <w>21</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>448</y>
+      <w>147</w>
+      <h>77</h>
+    </coordinates>
+    <panel_attributes>IntelligenceAnimal
+--
+#intelligenceIndex: int
+--
++train(): void
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>420</x>
+      <y>364</y>
+      <w>224</w>
+      <h>98</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0;300.0;70.0;300.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>315</x>
+      <y>84</y>
+      <w>133</w>
+      <h>91</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=n
+m2=1
+notify to &gt;</panel_attributes>
+    <additional_attributes>10.0;100.0;110.0;100.0;110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

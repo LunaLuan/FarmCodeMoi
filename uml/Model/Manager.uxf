@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>120</x>
+      <y>40</y>
+      <w>210</w>
+      <h>190</h>
+    </coordinates>
+    <panel_attributes>AnimalManager
+--
+
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+-- Resp2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>110</y>
+      <w>210</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>Animal
+--
+#name: string
+#type: string
+#age: int
+#weight: float
+#priceSell: int
+#priceBuy: int
+#foodUnit: int
+#listener: list&lt;Animal&gt;
+--
++sound(): void
++eat(): void
++goOut(): void
++goBack(): void
++die(): void
++reproduce(): list&lt;Animal&gt;
++listen(Animal *a): void
++onHourChange()
++onDayChange()
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
